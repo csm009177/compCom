@@ -1,5 +1,5 @@
 // doc
-export function doc(title, globalStyle, children){
+export default function doc(title, globalStyle, children){
   return `<!DOCTYPE html>
   <html lang="en">
   <head>
