@@ -4,15 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="index.css"/>
   <style>
-    *{box-sizing: border-box;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
   </style>
 </head>
 <body>
-  ${content}
   <div id="root"></div>
-  <script>
-    createEle
+  <script type="module">
+    import { createElement, component, render } from './comp.js'
+    const stateData = [
+            { hash: '#STpetersburg', text: 'STpetersburg' },
+            { hash: '#Moscow', text: 'Moscow' },
+            { hash: '#Kazan', text: 'Kazan' },
+            { hash: '#Omsk', text: 'Omsk' },
+            { hash: '#Irkchuk', text: 'Irkchuk' },
+            { hash: '#Vladivostok', text: 'Vladivostok' },
+        ];
+    const rootCont = 
+        createElement("div", {id:"bigcont"}, 
+          createElement("div", {id:"leftside" },component(stateData)
+            ),
+          createElement("div", {id:"middle" }, 
+            ),
+          createElement("div", {id:"rightside" },
+            ),
+        )
+        const root = document.getElementById('root');
+        root.appendChild(render(rootCont));
   </script>
 </body>
 </html>
